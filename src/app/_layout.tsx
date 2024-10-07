@@ -11,10 +11,9 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import * as Sentry from '@sentry/react-native';
 
 Sentry.init({
-  dsn: 'https://802fb24078243ebcd93ffc4446268365@o4508074876207104.ingest.de.sentry.io/4508074878566480',
+  //dsn: 'https://802fb24078243ebcd93ffc4446268365@o4508074876207104.ingest.de.sentry.io/4508074878566480',
+  dsn:  process.env.EXPO_PUBLIC_SENTRY_DSN
 
-  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
-  // enableSpotlight: __DEV__,
 });
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
