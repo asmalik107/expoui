@@ -1,5 +1,6 @@
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
+import * as Sentry from "@sentry/react-native";
 
 export default function TabOneScreen() {
     // use the useStyles hook to get the styles object
@@ -8,6 +9,7 @@ export default function TabOneScreen() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Tab One</Text>
+            <Button title='Try!' onPress={ () => { Sentry.captureException(new Error('First error')) }}/>
         </View>
     );
 }
